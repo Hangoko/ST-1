@@ -60,7 +60,7 @@ uint64_t nextPrime(uint64_t value) {
   }
 
   uint64_t candidate = value + 1;
-  if (candidate > 2 && candidate % 2 == 0) {
+    if (candidate % 2 == 0) {
     ++candidate;
   }
 
@@ -93,7 +93,10 @@ uint64_t sumPrime(uint64_t hbound) {
       continue;
     }
 
-    for (uint64_t composite = value * value; composite < hbound; composite += value) {
+      // Split long line for cpplint compliance
+      for (uint64_t composite = value * value;
+           composite < hbound;
+           composite += value) {
       is_prime[composite] = false;
     }
   }
